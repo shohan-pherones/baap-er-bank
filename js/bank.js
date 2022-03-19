@@ -6,6 +6,12 @@ document.getElementById('login-submit').addEventListener('click', function(){
     //get user password
     const passwordField = document.getElementById('user-password');
     const userPassword = passwordField.value;
-    console.log(userPassword); 
+
+    if(userEmail == 'admin@gmail.com' && userPassword == 'admin'){
+        window.location.href = 'banking.html';
+    }
+    else{
+        alert('Invalid email or password');
+    }
     
 })
