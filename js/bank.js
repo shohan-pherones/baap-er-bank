@@ -7,9 +7,9 @@ document.getElementById('login-submit').addEventListener('click', function(){
     const passwordField = document.getElementById('user-password');
     const userPassword = passwordField.value;
 
-    //admin panel
+    //check email and password
     if(userEmail == 'admin@gmail.com' && userPassword == 'admin'){
-        window.location.href = './banking.html';
+        window.location.href = 'banking.html';
     }
     else{
         alert('Invalid email or password');
