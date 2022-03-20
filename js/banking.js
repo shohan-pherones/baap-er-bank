@@ -46,15 +46,23 @@ document.getElementById('withdraw-button').addEventListener('click', function(){
     //adding withdraw amounts
     const updatedWithdraw = withdrawOutputValue + withdrawInputValue;
 
-    withdrawOutputText.innerText = updatedWithdraw;
+    
 
     //balance update after withdraw
     const balanceText = document.getElementById('balance');
     const balanceValue = parseFloat(balanceText.innerText);
 
-    const updatedBalance = balanceValue - withdrawInputValue;
+    
 
-    balanceText.innerText = updatedBalance;
+    if(withdrawInputValue > balanceValue){
+        alert('Please reduce the withdraw amount');
+    }
+    else{
+        withdrawOutputText.innerText = updatedWithdraw;
+        
+        const updatedBalance = balanceValue - withdrawInputValue;
+        balanceText.innerText = updatedBalance;
+    }
 
     //clear the withdraw field
     withdrawInputText.value = '';
